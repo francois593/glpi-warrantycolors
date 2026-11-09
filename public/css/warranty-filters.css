@@ -1,0 +1,80 @@
+.wc-filters {
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 5px;
+  margin-left: 12px;
+}
+
+.wc-filters .wc-filter {
+  border: 0;
+  border-radius: 6px;
+  padding: 5px 10px;
+  font-size: 12px;
+  font-weight: 600;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.wc-filter-all {
+  background: #E9EEF4;
+  color: #475569;
+}
+
+.wc-filter-expired {
+  background: #F8CCD2;
+  color: #A51D30;
+}
+
+.wc-filter-soon {
+  background: #FFE0B5;
+  color: #96510B;
+}
+
+.wc-filter-valid {
+  background: #CFEBD5;
+  color: #226B39;
+}
+
+.wc-filter-unknown {
+  background: #E0E5EB;
+  color: #526171;
+}
+
+.wc-filters .wc-filter:hover {
+  filter: brightness(0.94);
+}
+
+.wc-filters .wc-filter:focus-visible {
+  outline: 2px solid #206bc4;
+  outline-offset: 2px;
+}
+
+:root[data-glpi-theme-dark="1"] .wc-filter-all,
+:root[data-glpi-theme-dark="1"] .wc-filter-unknown {
+  background: #30343b;
+  color: #c2cad3;
+}
+
+:root[data-glpi-theme-dark="1"] .wc-filter-expired {
+  background: #481e29;
+  color: #ff9aa5;
+}
+
+:root[data-glpi-theme-dark="1"] .wc-filter-soon {
+  background: #403313;
+  color: #ffe1a0;
+}
+
+:root[data-glpi-theme-dark="1"] .wc-filter-valid {
+  background: #193e2e;
+  color: #a5e9b7;
+}
+
+@media (max-width: 768px) {
+  .wc-filters {
+    margin-left: 0;
+    margin-top: 6px;
+    width: 100%;
+  }
+}

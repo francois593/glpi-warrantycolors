@@ -1,0 +1,50 @@
+/* Warranty Colors 1.0.0. Only table data cells explicitly recognised by JS. */
+td.wc-expired {
+  --wc-ink: #A51D30;
+  --wc-bg: #F8CCD2;
+  --wc-edge: #d63939;
+}
+td.wc-soon {
+  --wc-ink: #96510B;
+  --wc-bg: #FFE0B5;
+  --wc-edge: #d99800;
+}
+td.wc-valid {
+  --wc-ink: #226B39;
+  --wc-bg: #CFEBD5;
+  --wc-edge: #2b9952;
+}
+td.wc-unknown {
+  --wc-ink: #526171;
+  --wc-bg: #E0E5EB;
+  --wc-edge: #8b949e;
+}
+td.wc-expired, td.wc-soon, td.wc-valid, td.wc-unknown {
+  background: transparent !important;
+  box-shadow: none !important;
+  color: inherit !important;
+  font-weight: inherit !important;
+}
+
+td.wc-expired > span.text-nowrap,
+td.wc-soon > span.text-nowrap,
+td.wc-valid > span.text-nowrap,
+td.wc-unknown > span.text-nowrap {
+  display: inline-block !important;
+  padding: 3px 9px !important;
+  border-radius: 999px !important;
+  background-color: var(--wc-bg) !important;
+  color: var(--wc-ink) !important;
+  font-weight: 600 !important;
+  line-height: 1.4;
+}
+/* GLPI dark-mode may be toggled independently of operating system. */
+:root[data-glpi-theme-dark="1"] td.wc-expired { --wc-ink: #ff9aa5; --wc-bg: #481e29; --wc-edge: #f76776; }
+:root[data-glpi-theme-dark="1"] td.wc-soon { --wc-ink: #ffe1a0; --wc-bg: #403313; --wc-edge: #fab005; }
+:root[data-glpi-theme-dark="1"] td.wc-valid { --wc-ink: #a5e9b7; --wc-bg: #193e2e; --wc-edge: #69db7c; }
+
+:root[data-glpi-theme-dark="1"] td.wc-unknown {
+  --wc-ink: #c2cad3;
+  --wc-bg: #30343b;
+  --wc-edge: #8893a2;
+}
