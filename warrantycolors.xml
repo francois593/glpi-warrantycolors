@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+  <name>Warranty Colors</name>
+  <key>warrantycolors</key>
+  <state>stable</state>
+  <logo>https://raw.githubusercontent.com/francois593/glpi-warrantycolors/main/public/img/warrantycolors.png</logo>
+  <description>
+    <short>
+      <en>Color-coded computer warranty status, GLPI search filters and PDF, XLSX, ODS and CSV exports.</en>
+      <fr>Statuts de garantie des ordinateurs en couleur, filtres de recherche GLPI et exports PDF, XLSX, ODS et CSV.</fr>
+    </short>
+    <long>
+      <en>
+Warranty Colors adds four warranty-status indicators to the GLPI 11 computer inventory: expired (red), expiring within 90 days (orange), valid (green), and unknown (grey).
+
+Features:
+- Five warranty-status search filters.
+- Colored PDF, XLSX and ODS exports; plain CSV export.
+- Export the current page or all matching results, subject to a 1,000-result guard.
+- No manufacturer API or external service required.
+
+Compatibility is declared for GLPI 11.0.x. Please check the exact GLPI version and read the validation guide before production installation. Full-volume HTTP and memory testing remains pending. The landscape PDF may wrap long computer names.
+      </en>
+      <fr>
+Warranty Colors affiche quatre états de garantie dans le parc des ordinateurs GLPI 11 : expirée (rouge), expiration sous 90 jours (orange), valide (vert) et inconnue (gris).
+
+Fonctionnalités :
+- Cinq filtres de recherche par état de garantie.
+- Exports PDF, XLSX et ODS colorisés ; export CSV sans couleurs.
+- Export de la page courante ou de tous les résultats, avec un garde-fou à 1 000 résultats.
+- Aucune API constructeur ni dépendance à un service externe.
+
+Compatibilité annoncée pour GLPI 11.0.x. Vérifier la version exacte de GLPI et suivre la recette avant toute installation en production. Les essais HTTP et mémoire à grande échelle restent à réaliser. Le PDF paysage peut renvoyer les noms longs sur plusieurs lignes.
+      </fr>
+    </long>
+  </description>
+  <homepage>https://github.com/francois593/glpi-warrantycolors</homepage>
+  <download>https://github.com/francois593/glpi-warrantycolors/releases</download>
+  <issues>https://github.com/francois593/glpi-warrantycolors/issues</issues>
+  <readme>https://github.com/francois593/glpi-warrantycolors/blob/main/README.md</readme>
+  <authors>
+    <author>Warranty Colors contributors</author>
+  </authors>
+  <versions>
+    <version>
+      <num>1.0.0</num>
+      <compatibility>~11.0.0</compatibility>
+      <download_url>https://github.com/francois593/glpi-warrantycolors/releases/download/v1.0.0/warrantycolors-1.0.0.zip</download_url>
+    </version>
+  </versions>
+  <langs>
+    <lang>en_GB</lang>
+    <lang>fr_FR</lang>
+  </langs>
+  <license>MIT</license>
+  <tags>
+    <en>
+      <tag>warranty</tag>
+      <tag>inventory</tag>
+      <tag>export</tag>
+    </en>
+    <fr>
+      <tag>garantie</tag>
+      <tag>inventaire</tag>
+      <tag>export</tag>
+    </fr>
+  </tags>
+  <screenshots />
+</root>
