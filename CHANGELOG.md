@@ -1,5 +1,16 @@
 # Changelog
 
+## 1.0.1 — 2026-11-10
+
+- Amélioration de la gestion mémoire des exports PDF « Toutes les pages » : minimum conditionnel de 256 Mio, sans diminuer une limite supérieure ou illimitée ; erreur explicite si l'augmentation est impossible.
+- Ajout du centrage automatique du bouclier Warranty Colors dans la carte Marketplace, sans modification de GLPI ni des autres plugins.
+- Logo du plugin fourni en haute résolution (256 × 256) ; les autres visuels historiques restent disponibles.
+- Qualification HTTP réelle sur GLPI-LAB : exports PDF/XLSX/ODS/CSV réussis à 1 000 résultats et refus HTTP 422 à 1 001 résultats ; données temporaires supprimées après recette.
+- Mise à jour de la documentation de recette et de ses limites connues.
+
+**Réserve :** la nouvelle politique mémoire 1.0.1 n'a pas été retestée sur un export PDF de 1 000 résultats ; la réinstallation depuis l'archive finale et la compatibilité avec toutes les versions de GLPI 11 restent à qualifier.
+
+
 ## 1.0.0 — 2026-11-09
 
 - Mise en couleur des expirations de garantie : rouge, orange, vert et gris.

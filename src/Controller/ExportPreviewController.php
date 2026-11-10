@@ -154,6 +154,35 @@ final class ExportPreviewController extends AbstractController
             );
         }
 
+        // Full PDF exports require additional TCPDF memory.
+        // Never lower an existing limit or override unlimited memory.
+        if ($scope === 'all' && $format === 'pdf') {
+            $currentLimit = ini_get('memory_limit');
+
+            if ($currentLimit === false) {
+                throw new RuntimeException(
+                    'Unable to read PHP memory limit'
+                );
+            }
+
+            $targetBytes = 256 * 1024 * 1024;
+            $currentBytes = ini_parse_quantity($currentLimit);
+
+            if ($currentBytes !== -1 && $currentBytes < $targetBytes) {
+                $previousLimit = ini_set('memory_limit', '256M');
+                $effectiveLimit = ini_get('memory_limit');
+
+                if ($previousLimit === false
+                    || $effectiveLimit === false
+                    || ini_parse_quantity($effectiveLimit) < $targetBytes) {
+                    throw new \Symfony\Component\HttpKernel\Exception\ServiceUnavailableHttpException(
+                        null,
+                        'PDF export requires at least 256 MiB PHP memory'
+                    );
+                }
+            }
+        }
+
         // SearchEngine applies GLPI rights and entity restrictions.
         $data = SearchEngine::getData(
             Computer::class,

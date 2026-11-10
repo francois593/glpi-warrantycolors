@@ -1,4 +1,4 @@
-# Warranty Colors 1.0.0 — Validation et mise en production
+# Warranty Colors 1.0.1 — Validation et mise en production
 
 ## Périmètre
 
@@ -11,12 +11,22 @@ Le laboratoire GLPI 11 et le plugin sont distincts du serveur de production. Les
 | Couleurs et filtres sur 4 ordinateurs fictifs | Vérifiés dans le laboratoire |
 | XLSX, CSV, PDF et ODS sur ces 4 ordinateurs | Exports fonctionnels ; ODS et CSV ouverts dans Excel |
 | PDF A4 paysage | Fonctionnel ; largeurs de colonnes non optimales |
+| Logo carte Marketplace | Centrage automatique vérifié dans Chrome sur GLPI-LAB après actualisation sans cache |
 | Garde-fou de 1 000 résultats | 8/8 scénarios unitaires validés |
-| Comportement HTTP réel à 1 000 et 1 001 résultats | **À qualifier** |
-| Consommation mémoire PHP-FPM pendant un grand export | **À mesurer** |
+| Nettoyage des données de charge | 997 ordinateurs temporaires supprimés ; 4 originaux conservés |
+| Comportement HTTP réel à 1 000 et 1 001 résultats | **PASS** sur GLPI-LAB : PDF, XLSX, ODS et CSV ; 422 au-delà de 1 000 |
+| Politique mémoire PDF 1.0.1 | 6 scénarios PASS ; PDF 4 lignes PASS ; charge 1 000 avec cette politique **à qualifier** |
 | Réinstallation à blanc depuis le ZIP final | **À qualifier** |
 | Compatibilité avec toutes les éditions/mises à jour GLPI 11 | **Non démontrée** |
 | Qualité de protection de formules CSV sous Excel pour données malveillantes | **À qualifier en intégration** |
+
+## Précisions sur les essais de charge 1.0.1
+
+- GLPI-LAB : 1 000 ordinateurs au total lors du test de charge ; exports PDF, XLSX, ODS et CSV contrôlés à ce seuil. À 1 001 résultats, les quatre exports complets ont répondu HTTP 422.
+- L'export PDF complet à 1 000 résultats a réussi avec une configuration mémoire de 256 Mio utilisée pendant les essais précédents.
+- Le contrôleur 1.0.1 applique ensuite un ajustement mémoire *conditionnel* uniquement pour le PDF complet : en dessous de 256 Mio, demande `ini_set('memory_limit', '256M')` et vérifie son effet ; à 256 Mio, au-dessus ou avec `-1`, la limite reste inchangée.
+- Six scénarios unitaires de cette politique ont été validés ; le PDF sur les quatre ordinateurs originaux a réussi en intégration avec le contrôleur candidat. Un nouveau test de charge à 1 000 résultats du candidat final reste nécessaire avant généralisation.
+- Les tests JavaScript de statut et de DOM de l'archive ont passé 20 scénarios lors de la revue des sources. Le test PHP de garde-fou requiert l'environnement GLPI et doit être exécuté depuis une installation correspondante.
 
 ## Préflight lecture seule
 

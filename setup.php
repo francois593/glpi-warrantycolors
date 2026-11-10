@@ -1,14 +1,14 @@
 <?php
 /**
  * Warranty Colors — lightweight read-only warranty visualisation for GLPI.
- * Version 1.0.0 for GLPI 11.
+ * Version 1.0.1 for GLPI 11.
  */
 
 declare(strict_types=1);
 
 use Glpi\Plugin\Hooks;
 
-const PLUGIN_WARRANTYCOLORS_VERSION = '1.0.0';
+const PLUGIN_WARRANTYCOLORS_VERSION = '1.0.1';
 
 function plugin_init_warrantycolors(): void
 {
@@ -24,6 +24,7 @@ function plugin_init_warrantycolors(): void
         'js/warranty-labels.js',
         'js/warranty-filters.js',
         'js/warranty-exports.js',
+        'js/warranty-logo.js',
     ];
 }
 
