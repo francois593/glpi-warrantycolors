@@ -9,6 +9,33 @@ Warranty Colors facilite la lecture des dates de garantie des ordinateurs dans G
 
 ![Warranty Colors logo](public/img/logo.png)
 
+## Aperçu / Preview
+
+**Warranty Colors 1.0.1** rend immédiatement visibles les échéances de garantie dans GLPI 11 :
+quatre statuts colorés, cinq filtres natifs et des exports PDF, XLSX, ODS et CSV.
+Aucune API constructeur n'est nécessaire.
+
+**Warranty Colors 1.0.1** highlights computer warranty deadlines directly in GLPI 11:
+four color-coded statuses, five native search filters, and PDF, XLSX, ODS and CSV exports.
+No manufacturer API is required.
+
+![Capture GLPI-LAB : filtres et états Warranty Colors sur des ordinateurs fictifs](docs/screenshots/warrantycolors-glpi-lab-demo.png)
+
+*Capture réelle de GLPI-LAB avec des ordinateurs fictifs `TEST-WARRANTY-*` ; aucune donnée de production.*  
+*Actual GLPI-LAB screenshot using synthetic `TEST-WARRANTY-*` computers; no production data.*
+
+| État / Status | Règle / Rule | Affichage / Display |
+|---|---|---|
+| Expirée / Expired | Date antérieure à aujourd'hui / Past due | 🔴 Rouge / Red |
+| Sous 90 jours / Expiring soon | De J0 à J+90 inclus / Today through day 90 | 🟠 Orange |
+| Valide / Valid | Au-delà de J+90 / Beyond day 90 | 🟢 Vert / Green |
+| Inconnue / Unknown | Date absente ou non interprétable / Missing or unknown | ⚪ Gris / Grey |
+
+**Plus d'informations / More information :** [Presentation HTML / HTML showcase](docs/presentation.html) · [Release 1.0.1](https://github.com/francois593/glpi-warrantycolors/releases/tag/v1.0.1) · [Validation et limites connues](docs/VALIDATION.md)
+
+> L'intégration au Marketplace embarqué de GLPI est distincte de la publication GitHub ; elle n'est pas encore confirmée.  
+> The GLPI in-app Marketplace listing is separate from the GitHub release and is not yet confirmed.
+
 ## Fonctions / Features
 
 | Statut / Status | Règle / Rule | Couleur / Color |
